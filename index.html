@@ -19,15 +19,61 @@ img {
 h2{
 color: grey;
 }
+ul {
+  white-space: nowrap;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
+}
+.crop {
+ height: 20px;
+ width: 20px;
+ overflow: hidden;
+ margin: 10px;
+}
+.crop img {
+ height: auto;
+ width: 20px;
+
+}
+#dis{
+  margin-bottom: 90px;
+}
+#line{
+  margin-top: 20px;
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+#footer{
+  color: grey;
+  opacity: 1;
+  margin-top: 20px;
+  font-size:70%;
+}
 </style>
+
 <body>
 <div id="mydiv">
-<img src="https://raw.githubusercontent.com/amritvin/c_amritanand/master/images/me.jpeg" alt="Avatar" height="100" width="100">
+<img src="images/me1.jpeg" alt="Avatar" height="100" width="100">
 <h1>Amritanand C.</h1>
     <div id="dis">
         <h2> M.Tech, Cyber Security Systems and Networking, Amrita School of Engineering </h2>
-        <a href="https://www.amrita.edu/center/cyber-security"> click </a>
+      <!--<a href="https://www.amrita.edu/center/cyber-security">Amrita</a>-->
     </div>
+    <div id="logos">
+      <ul>
+         <a title="facebook" href="https://www.facebook.com/c.amritanand"><li class="crop"><img src="images/facebook.png" ></li></a>
+         <a title="github" href="https://www.github.com/amritvin"><li class="crop"><img src="images/github.png"></li></a>
+         <a title="instagram" href="https://www.instagram.com/c.amritanand/"><li class="crop"><img src="images/insta.png"></li></a>
+         <a title="linkedin" href="https://www.linkedin.com/in/amritanand-c-19a94823/"><li class="crop"><img src="images/linkedin.png" ></li></a>
+         <a title="mail@[c.amritanand@gmail.com]" href="mailto:c.amritanand@gmail.com"><li class="crop"><img src="images/mail.png"></li></a>
+         <a title="twitter" href="https://twitter.com/AmritanandC"><li class="crop"><img src="images/twit.png"></li></a>
+      </ul>
+    </div>
+    <div id="line"><hr></div>
+    <div id="footer">Made with <span style="color:grey;">❤️</span> in India</div>
 </div>
 </body>
 </html>
