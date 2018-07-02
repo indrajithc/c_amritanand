@@ -163,10 +163,16 @@ function closeNav() {
   }
 function openbox() {
   var x = document.getElementById("msgbox");
+  var y = document.getElementById("pages");
+  var z = document.getElementById("page");
+  var a = document.getElementById("mydiv");
       if (x.style.display == "none") {
           x.style.display = "block";
+          y.style.display = "none";
+          z.style.display="none";
       } else {
           x.style.display = "none";
+          a.style.display = "block";
       }
 }
 
