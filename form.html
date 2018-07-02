@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Slide Contact Form - Demo Preview</title>
+<link href="css/slider.css" rel="stylesheet"><!-- Include css file here-->
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'><!-- Including google font-->
+<script src="js/slider.js"></script>
+<script>
+/*
+------------------------------------------------------------
+Function to activate form button to open the slider.
+------------------------------------------------------------
+*/
+function open_panel() {
+slideIt();
+var a = document.getElementById("sidebar");
+a.setAttribute("id", "sidebar1");
+a.setAttribute("onclick", "close_panel()");
+}
+/*
+------------------------------------------------------------
+Function to slide the sidebar form (open form)
+------------------------------------------------------------
+*/
+function slideIt() {
+var slidingDiv = document.getElementById("slider");
+var stopPosition = 0;
+if (parseInt(slidingDiv.style.right) < stopPosition) {
+slidingDiv.style.right = parseInt(slidingDiv.style.right) + 2 + "px";
+setTimeout(slideIt, 1);
+}
+}
+/*
+------------------------------------------------------------
+Function to activate form button to close the slider.
+------------------------------------------------------------
+*/
+function close_panel() {
+slideIn();
+a = document.getElementById("sidebar1");
+a.setAttribute("id", "sidebar");
+a.setAttribute("onclick", "open_panel()");
+}
+/*
+------------------------------------------------------------
+Function to slide the sidebar form (slide in form)
+------------------------------------------------------------
+*/
+function slideIn() {
+var slidingDiv = document.getElementById("slider");
+var stopPosition = -342;
+if (parseInt(slidingDiv.style.right) > stopPosition) {
+slidingDiv.style.right = parseInt(slidingDiv.style.right) - 2 + "px";
+setTimeout(slideIn, 1);
+}
+}
+</script>
+<style>
+#slider {
+width:500px;
+top:100px;
+position:absolute
+}
+#header {
+width:260px;
+height:520px;
+position:absolute;
+right:0;
+border:1px solid #d8d8d8;
+margin-left:40px;
+padding:20px 40px;
+border-radius:3px;
+box-shadow:0 0 8px gray
+}
+#sidebar {
+position:absolute;
+top:180px;
+left:113px;
+box-shadow:0 0 8px gray
+}
+#sidebar1 {
+position:absolute;
+top:180px;
+left:113px;
+box-shadow:0 0 8px gray
+}
+h3 {
+font-family:'Roboto Slab',serif
+}
+input[type=text] {
+margin-top:10px;
+padding:6px;
+width:100%;
+font-size:15px;
+border-radius:2px;
+border:3px solid #98d0f1
+}
+h4 {
+font-size:15px
+}
+
+select {
+padding:6px;
+width:100%;
+font-size:15px;
+border-radius:2px;
+border:3px solid #98d0f1
+}
+textarea {
+padding:6px;
+font-size:15px;
+border-radius:2px;
+border:3px solid #98d0f1;
+margin-top:10px;
+height:80px;
+width:100%
+}
+.button {
+background:#2bc1f2;
+border:none;
+color:#fff;
+width:100%;
+font-size:22px;
+font-weight:bolder;
+padding:8px 0;
+border-radius:3px;
+cursor:pointer;
+margin-top:25px
+}
+</style>
+</head>
+<body>
+
+</div>
+<!-- Sliding div starts here -->
+<div id="slider" style="right:-342px;">
+<div id="sidebar" onclick="open_panel()"><h5>message</h5></div>
+<div id="header">
+<h2>Drop a message</h2>
+<p> Happy to hear from you..!</p>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSd6zBXelQKB29Kw5L6mffWYeQWYO0TMdVTOjJOa9voPhsBtdQ/formResponse" method ="POST">
+<input type="text" name="entry.2020995471" placeholder="Your Email">
+<input type="text" name="entry.97934399" placeholder="Message">
+<hr>
+<input class="button" type="submit" value="Submit">
+</form>
+</div>
+</div>
+<!-- Sliding div ends here -->
+</body>
+</html>
