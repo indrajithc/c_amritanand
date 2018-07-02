@@ -124,7 +124,28 @@ border:2px solid #98d
     font-family: 'Cedarville Cursive', cursive;
     color: grey;
 }
+#pages
+{
+display:none;
+margin-top:10px;
+margin-left:140px;
+padding:10px;
+width:80%;
+font-size:15px;
 
+
+}
+#page
+{
+display:none;
+margin-top:10px;
+margin-left:140px;
+padding:10px;
+width:80%;
+font-size:15px;
+
+
+}
 </style>
 
 <script>
@@ -148,16 +169,57 @@ function openbox() {
           x.style.display = "none";
       }
 }
+
+
+function showIFrame() {
+var iframe = document.getElementById("pages");
+var x = document.getElementById("mydiv");
+var frame = document.getElementById("page");
+if (iframe.style.display == "none") {
+    iframe.style.display = "block";
+    x.style.display = "none";
+    frame.style.display = "none";
+
+
+}
+else {
+    iframe.style.display = "none";
+    x.style.display = "block";
+    frame.style.display = "none";
+}
+
+
+}
+function showIFrameI() {
+var iframe = document.getElementById("page");
+var frame = document.getElementById("pages");
+var x = document.getElementById("mydiv");
+if (iframe.style.display == "none") {
+    iframe.style.display = "block";
+    x.style.display = "none";
+    frame.style.display = "none";
+
+}
+else {
+    iframe.style.display = "none";
+    x.style.display = "block";
+    frame.style.display = "none";
+}
+
+
+}
+
 </script>
 
 <body >
+
 <div id="allvis">
 <div id="mySidenav" class="sidenav">
   <a title="hide" href="javascript:void(0)" class="closebtn" onclick="closeNav()"><<</a>
   <hr>
-  <a href="test.html">About me</a>
+  <a href="javascript:showIFrameI()">About me</a>
   <hr>
-  <a href="pro.html">Projects</a>
+  <a href="javascript:showIFrame()">Projects</a>
   <hr>
   <a href="https://gustocrave.wordpress.com/">Blog</a>
   <hr>
@@ -168,6 +230,16 @@ function openbox() {
 
 
 <span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; more</span>
+<div id="pages">
+  <iframe src="pro.html" height="100%" width="100%" frameBorder="0">
+  <p>Your browser does not support iframes.</p>
+  </iframe>
+</div>
+<div id="page">
+  <iframe src="test.html" height="100%" width="100%" frameBorder="0">
+  <p>Your browser does not support iframes.</p>
+  </iframe>
+</div>
 <div id="msgbox">
   <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSd6zBXelQKB29Kw5L6mffWYeQWYO0TMdVTOjJOa9voPhsBtdQ/formResponse" method ="POST" target="dummyframe">
@@ -181,7 +253,9 @@ function openbox() {
   </form>
 </div>
 </div>
+
 <div id="mydiv" onClick="window.location.reload()">
+
 <img src="images/me1.jpeg" alt="Avatar" height="100" width="100">
 <h1>Amritanand C.</h1>
     <div id="dis">
