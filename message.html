@@ -1,0 +1,115 @@
+<html>
+<title>c_amritanand</title>
+<style>
+#mydiv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    /*border: 1px solid #ccc;*/
+    /*background-color: #f3f3f3;*/
+    text-align: center;
+}
+img {
+    border-radius: 50%;
+}
+h2{
+color: grey;
+}
+ul {
+  white-space: nowrap;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
+}
+.crop {
+ height: 20px;
+ width: 20px;
+ overflow: hidden;
+ margin: 10px;
+}
+.crop img {
+ height: auto;
+ width: 20px;
+
+}
+#dis{
+  margin-bottom: 90px;
+}
+#line{
+  margin-top: 20px;
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+#footer{
+  color: grey;
+  opacity: 1;
+  margin-top: 20px;
+  font-size:70%;
+}
+#htext{
+  display: none;
+}
+a{
+  color: grey;
+}
+.textbox { height: 60px}
+</style>
+<script>
+var something = (function() {
+    var executed = false;
+    return function() {
+        if (!executed) {
+            executed = true;
+            if (document.getElementById('hform')) {
+
+                        if (document.getElementById('hform').style.display == 'none') {
+                            document.getElementById('hform').style.display = 'block';
+                            document.getElementById('htext').style.display = 'none';
+                        }
+                        else {
+                            document.getElementById('hform').style.display = 'none';
+                            document.getElementById('htext').style.display = 'block';
+                        }
+                    }
+                    document.getElementById('bid').style.visibility='hidden';
+        }
+    };
+})();
+
+
+
+</script>
+<body>
+<div id="mydiv">
+<img src="speaker.jpg" alt="Avatar" height="100" width="100">
+<h1>wHiSpER_LoUD.</h1>
+    <div id="dis">
+      <div id="htext">
+      <h3><p>Thank You! ....</h3>
+      </div>
+      <div id="hform">
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSduMAyronXE9ziZ6qtVPoPp6GYKUTw48miLacTzEyBvcehU1w/formResponse" method ="POST" target="my_iframe">
+        <input type="text" class="textbox" name="entry.1972094807" placeholder="Whisper Your Secret Message...!">
+      </div>
+<div id="line"><hr></div>
+<br>
+<input id="bid" class="button" type="submit" onclick="something()"value="send">
+</form
+
+
+    </div>
+    <iframe name="my_iframe" src="" id="my_iframe" width="0" height="0">
+    </iframe>
+
+    <div id="line"><hr></div>
+    <div id="footer">Made with <span style="color:grey;">❤️</span> in India
+    | designed by <a href="https://amritvin.github.io/c_amritanand/"> c.amritanand </a> &#169; 2019 </div>
+</div>
+</body>
+</html>
