@@ -1,0 +1,290 @@
+<html>
+<title> &#9974;   c_amritanand</title>
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Shrikhand');
+#mydiv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    /*border: 1px solid #ccc;*/
+    /*background-color: #f3f3f3;*/
+    text-align: center;
+}
+img {
+    border-radius: 50%;
+}
+h2{
+color: grey;
+}
+ul {
+  white-space: nowrap;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
+}
+.crop {
+ height: 20px;
+ width: 20px;
+ overflow: hidden;
+ margin: 10px;
+}
+.crop img {
+ height: auto;
+ width: 20px;
+
+}
+#dis{
+  margin-bottom: 90px;
+}
+#line{
+  margin-top: 20px;
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+#footer{
+  color: grey;
+  opacity: 1;
+  margin-top: 20px;
+  font-size:70%;
+}
+a{
+color:grey;
+}
+a:hover{
+  color: red;
+}
+
+
+
+.sidenav {
+    height:73%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#F8F8F8;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    opacity: 0.8;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color:#888888;
+    display: block;
+    transition: 0.3s;
+
+
+}
+
+.sidenav a:hover {
+    color:#D8D8D8;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 90%;
+    right: 10px;
+    font-size: 25px;
+    margin-left: 30px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+#msgbox
+{
+display:none;
+
+margin-top:200px;
+margin-left:160px;
+padding:10px;
+width:15%;
+font-size:15px;
+border-radius:1px;
+border:2px solid #98d
+}
+#header {
+    font-size: 20px;
+    font-family:'Cedarville Cursive', cursive;
+    color: grey;
+}
+#pages
+{
+display:none;
+margin-top:10px;
+margin-left:140px;
+padding:10px;
+width:80%;
+font-size:15px;
+
+
+}
+#page
+{
+display:none;
+margin-top:10px;
+margin-left:140px;
+padding:10px;
+width:80%;
+font-size:15px;
+
+
+}
+</style>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "150px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    var x = document.getElementById("msgbox");
+    if (x.style.display == "block") {
+        x.style.display = "none";
+    }
+
+  }
+function openbox() {
+  var x = document.getElementById("msgbox");
+  var y = document.getElementById("pages");
+  var z = document.getElementById("page");
+  var a = document.getElementById("mydiv");
+      if (x.style.display == "none") {
+          x.style.display = "block";
+          y.style.display = "none";
+          z.style.display="none";
+      } else {
+          x.style.display = "none";
+          a.style.display = "block";
+      }
+}
+
+
+function showIFrame() {
+var iframe = document.getElementById("pages");
+var x = document.getElementById("mydiv");
+var frame = document.getElementById("page");
+if (iframe.style.display == "none") {
+    iframe.style.display = "block";
+    x.style.display = "none";
+    frame.style.display = "none";
+
+
+}
+else {
+    iframe.style.display = "none";
+    x.style.display = "block";
+    frame.style.display = "none";
+}
+
+
+}
+function showIFrameI() {
+var iframe = document.getElementById("page");
+var frame = document.getElementById("pages");
+var x = document.getElementById("mydiv");
+if (iframe.style.display == "none") {
+    iframe.style.display = "block";
+    x.style.display = "none";
+    frame.style.display = "none";
+
+}
+else {
+    iframe.style.display = "none";
+    x.style.display = "block";
+    frame.style.display = "none";
+}
+
+
+}
+
+</script>
+
+<body >
+
+<div id="allvis">
+<div id="mySidenav" class="sidenav">
+  <a title="hide" href="javascript:void(0)" class="closebtn" onclick="closeNav()"><<</a>
+  <hr>
+  <a href="javascript:showIFrameI()">About me</a>
+  <hr>
+  <a href="javascript:showIFrame()">Projects</a>
+  <hr>
+  <a href="https://gustocrave.wordpress.com/">Blog</a>
+  <hr>
+  <a href="javascript:void(0)" class ="msgme" onclick="openbox()">Drop a message</a>
+  <hr>
+
+</div>
+
+
+<span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; more</span>
+<div id="pages">
+  <iframe src="pro.html" height="100%" width="100%" frameBorder="0">
+  <p>Your browser does not support iframes.</p>
+  </iframe>
+</div>
+<div id="page">
+  <iframe src="test.html" height="100%" width="100%" frameBorder="0">
+  <p>Your browser does not support iframes.</p>
+  </iframe>
+</div>
+<div id="msgbox">
+  <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSd6zBXelQKB29Kw5L6mffWYeQWYO0TMdVTOjJOa9voPhsBtdQ/formResponse" method ="POST" target="dummyframe">
+  <input type="text" name="entry.2020995471" placeholder="Your Email">
+  <br>
+  <br>
+  <input type="text" name="entry.97934399" placeholder="Message">
+  <br>
+  <br>
+  <input class="button" type="submit" value="Submit" style="width:86%; "onClick="window.location.reload()">
+  </form>
+</div>
+</div>
+
+<div id="mydiv" onClick="window.location.reload()">
+
+<img src="images/me1.jpeg" alt="Avatar" height="100" width="100">
+<h1>Amritanand C.</h1>
+    <div id="dis">
+        <div id="header">
+      <h4>"Good, Better, Best <i> Never let it rest, until ur good becomes better and better becomes best !</i> "</h4>
+      <!--<a href="https://www.amrita.edu/center/cyber-security">Amrita</a>-->
+    </div>
+    </div>
+    <div id="logos">
+      <ul>
+         <a title="facebook" href="https://www.facebook.com/c.amritanand"><li class="crop"><img src="images/facebook.png" ></li></a>
+         <a title="github" href="https://www.github.com/amritvin"><li class="crop"><img src="images/github.png"></li></a>
+         <a title="instagram" href="https://www.instagram.com//vin_amz/"><li class="crop"><img src="images/insta.png"></li></a>
+         <a title="linkedin" href="https://www.linkedin.com/in/amritanand-c-19a94823/"><li class="crop"><img src="images/linkedin.png" ></li></a>
+         <a title="mail@[c.amritanand@gmail.com]" href="mailto:c.amritanand@gmail.com"><li class="crop"><img src="images/mail.png"></li></a>
+         <a title="twitter" href="https://twitter.com/AmritanandC"><li class="crop"><img src="images/twit.png"></li></a>
+      </ul>
+    </div>
+    <div id="line"><hr></div>
+    <div id="footer">Made with <span style="color:grey;">❤️</span> in India
+    | designed by <a href="https://amritvin.github.io/c_amritanand/"> c.amritanand </a> &#169; 2018 <p><a href="https://www.amrita.edu/center/cyber-security"> visit Cyber@Amrita Vishwa Vidhyapeetham</a> </div>
+</div>
+
+
+</body>
+</html>
