@@ -1,11 +1,13 @@
 /*
  * Copyright(c) 2020
- * 
+ *
  * All rights reserved.
- * 
+ *
  * @author Indrajith C
- * 
+ *
  */
+
+import "../assets/scss/style.scss";
 
 function App() {
   return (
