@@ -6,14 +6,17 @@
  * @author Indrajith C
  *
  */
+import { BrowserRouter as Router } from "react-router-dom";
+
+import RouteView from "./RouteView";
 
 import "../assets/scss/style.scss";
 
 function App() {
   return (
-    <div className="App">
-      hello there,
-    </div>
+    <Router>
+      <RouteView />
+    </Router>
   );
 }
 
