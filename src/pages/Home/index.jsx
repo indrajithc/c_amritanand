@@ -106,7 +106,7 @@ const PageMaker = (props) => {
    */
   const pageFinder = (pageId, childProps) => {
     const CurrentPageComponent = (pageMap.find((eachPage) => eachPage.id === pageId) || {}).component || null;
-    return CurrentPageComponent ? <CurrentPageComponent {...childProps} /> : "";
+    return CurrentPageComponent ? <CurrentPageComponent {...childProps} pageMap={pageMap} /> : "";
   };
 
   return (
