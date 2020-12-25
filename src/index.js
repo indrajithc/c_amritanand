@@ -12,9 +12,6 @@ import ReactDOM from "react-dom";
 import App from "./containers/App";
 import reportWebVitals from "./containers/reportWebVitals";
 
-/** Bootstrap v5 */
-import "bootstrap/dist/css/bootstrap.min.css";
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
