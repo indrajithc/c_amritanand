@@ -12,6 +12,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import { Switch, Route } from "react-router-dom";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 /**  ========= TAG COMPONENTS ========= */
 /**  ========= SUB COMPONENT ========= */
@@ -129,10 +130,12 @@ PageMaker.propTypes = {
 const HomeSinglePage = ({ match }) => {
   const { path } = match || {};
   return (
-    <Switch>
-      <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
-      <Route exact path={`${path}${pageConstants.ABOUT}`} component={(props) => <PageMaker {...props} page={pageConstants.ABOUT} />} />
-    </Switch>
+    <ParallaxProvider>
+      <Switch>
+        <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
+        <Route exact path={`${path}${pageConstants.ABOUT}`} component={(props) => <PageMaker {...props} page={pageConstants.ABOUT} />} />
+      </Switch>
+    </ParallaxProvider>
   );
 };
 
