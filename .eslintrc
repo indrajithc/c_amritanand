@@ -54,7 +54,22 @@
       }
     ],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-props-no-spreading": [
+      1,
+      {
+        "html": "ignore",
+        "javascript": "ignore",
+        "javascriptreact": "ignore"
+      }
+    ],
+    "max-len": [
+      "warn", 
+      { 
+        "code": 300, 
+        "tabWidth": 2
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
