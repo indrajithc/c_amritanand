@@ -24,9 +24,6 @@ import AboutPage from "./About";
 /**  ========= UTILS ========= */
 import { pageConstants } from "../../common/utils/constants";
 
-/** Total sub pages in home single page view */
-const PAGE_COUNT = 2;
-
 const getPageMapper = () => {
   const pageMap = [
     {
@@ -48,7 +45,7 @@ const PageMaker = (props) => {
   const { page, history } = props;
 
   const pageMap = useMemo(getPageMapper, []);
-  const scrollHelperStyle = useMemo(() => ({ minHeight: `${PAGE_COUNT * 100}vh` }), []);
+  const scrollHelperStyle = useMemo(() => ({ minHeight: `${pageMap.length * 100}vh` }), [pageMap]);
 
   const pageSwitcher = useCallback((pageIndex) => {
     const currentPage = pageMap[pageIndex];
