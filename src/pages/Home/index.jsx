@@ -22,12 +22,10 @@ import AboutPage from "./About";
 /**  ========= MODULE STYLES ========= */
 /**  ========= CUSTOM COMPONENTS ========= */
 import SinglePageAnimation from "../../common/components/SinglePageAnimation";
+import Stars from "../../components/background/Stars";
 
 /**  ========= API SERVICE FUNCTIONS ========= */
 /**  ========= SVG IMAGE ICON ========= */
-import BackgroundStars from "../../assets/image/stars.webp";
-import BackgroundTwinkling from "../../assets/image/twinkling.webp";
-
 /**  ========= UTILS ========= */
 import { pageConstants } from "../../common/utils/constants";
 
@@ -145,10 +143,7 @@ const HomeSinglePage = ({ match }) => {
   const { path } = match || {};
   return (
     <>
-      <div className="home-page-background">
-        <div style={{ backgroundImage: `url(${BackgroundStars})` }} className="stars" />
-        <div className="twinkling" style={{ backgroundImage: `url(${BackgroundTwinkling})` }} />
-      </div>
+      <Stars />
       <ParallaxProvider>
         <Switch>
           <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
