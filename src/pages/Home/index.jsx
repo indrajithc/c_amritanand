@@ -7,7 +7,9 @@
  *
  */
 
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, {
+  useCallback, useEffect, useMemo, useRef,
+} from "react";
 import PropTypes from "prop-types";
 import { Switch, Route } from "react-router-dom";
 
@@ -44,6 +46,9 @@ const getPageMapper = () => {
 const PageMaker = (props) => {
   const { page, history } = props;
 
+  // local states
+  const scrollToRef = useRef(0);
+
   const pageMap = useMemo(getPageMapper, []);
   const scrollHelperStyle = useMemo(() => ({ minHeight: `${pageMap.length * 100}vh` }), [pageMap]);
 
@@ -54,7 +59,24 @@ const PageMaker = (props) => {
         history.push(currentPage.url);
       }
     }
-  }, []);
+  }, [page, pageMap, history]);
+
+  useEffect(() => {
+    if (page) {
+      const currentPageIndex = pageMap.findIndex((eachPage) => eachPage.id === page);
+      if (currentPageIndex >= 0) {
+        const totalPages = pageMap.length;
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const eachPageHeight = height / totalPages;
+        const currentPageScrollPosition = currentPageIndex * eachPageHeight;
+        if (winScroll < currentPageScrollPosition) {
+          scrollToRef.current = currentPageScrollPosition;
+          window.scrollTo(0, currentPageScrollPosition);
+        }
+      }
+    }
+  }, [pageMap, page]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +86,10 @@ const PageMaker = (props) => {
       const eachPageHeight = height / totalPages;
       const scrolled = winScroll / eachPageHeight;
       const currentPageId = Math.max(0, Math.min(Math.floor(scrolled), (totalPages - 1)));
-      pageSwitcher(currentPageId);
+      if (scrollToRef.current < winScroll) {
+        scrollToRef.current = 0;
+        pageSwitcher(currentPageId);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
