@@ -10,13 +10,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "../pages/Home";
+import HomeSinglePage from "../pages/Home";
 
 const RouteView = () => (
   <Switch>
-    <Route path="/">
-      <Home />
-    </Route>
+    <Route path="/" component={HomeSinglePage} />
   </Switch>
 );
 
