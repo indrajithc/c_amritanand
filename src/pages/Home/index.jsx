@@ -25,6 +25,8 @@ import SinglePageAnimation from "../../common/components/SinglePageAnimation";
 
 /**  ========= API SERVICE FUNCTIONS ========= */
 /**  ========= SVG IMAGE ICON ========= */
+import BackgroundStars from "../../assets/image/stars.webp";
+import BackgroundTwinkling from "../../assets/image/twinkling.webp";
 
 /**  ========= UTILS ========= */
 import { pageConstants } from "../../common/utils/constants";
@@ -107,11 +109,12 @@ const PageMaker = (props) => {
    * @param {String} pageId
    * @param {Object} childProps
    */
-  const pageFinder = (pageId, childProps) => pageMap.map((eachPage) => {
+  const pageFinder = (pageId, childProps) => pageMap.map((eachPage, index) => {
     const { component: PageComponent, id: pageIdIn } = eachPage || {};
     const active = pageIdIn === pageId;
+    const indexKey = `eachPage-_-${index}`;
     return (
-      <SinglePageAnimation pageIn={active}>
+      <SinglePageAnimation key={indexKey} pageIn={active}>
         <PageComponent
           {...childProps}
           pageMap={pageMap}
@@ -141,12 +144,18 @@ PageMaker.propTypes = {
 const HomeSinglePage = ({ match }) => {
   const { path } = match || {};
   return (
-    <ParallaxProvider>
-      <Switch>
-        <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
-        <Route exact path={`${path}${pageConstants.ABOUT}`} component={(props) => <PageMaker {...props} page={pageConstants.ABOUT} />} />
-      </Switch>
-    </ParallaxProvider>
+    <>
+      <div className="home-page-background">
+        <div style={{ backgroundImage: `url(${BackgroundStars})` }} className="stars" />
+        <div className="twinkling" style={{ backgroundImage: `url(${BackgroundTwinkling})` }} />
+      </div>
+      <ParallaxProvider>
+        <Switch>
+          <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
+          <Route exact path={`${path}${pageConstants.ABOUT}`} component={(props) => <PageMaker {...props} page={pageConstants.ABOUT} />} />
+        </Switch>
+      </ParallaxProvider>
+    </>
   );
 };
 
