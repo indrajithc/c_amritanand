@@ -21,6 +21,8 @@ import AboutPage from "./About";
 
 /**  ========= MODULE STYLES ========= */
 /**  ========= CUSTOM COMPONENTS ========= */
+import SinglePageAnimation from "../../common/components/SinglePageAnimation";
+
 /**  ========= API SERVICE FUNCTIONS ========= */
 /**  ========= SVG IMAGE ICON ========= */
 
@@ -105,10 +107,19 @@ const PageMaker = (props) => {
    * @param {String} pageId
    * @param {Object} childProps
    */
-  const pageFinder = (pageId, childProps) => {
-    const CurrentPageComponent = (pageMap.find((eachPage) => eachPage.id === pageId) || {}).component || null;
-    return CurrentPageComponent ? <CurrentPageComponent {...childProps} pageMap={pageMap} /> : "";
-  };
+  const pageFinder = (pageId, childProps) => pageMap.map((eachPage) => {
+    const { component: PageComponent, id: pageIdIn } = eachPage || {};
+    const active = pageIdIn === pageId;
+    return (
+      <SinglePageAnimation pageIn={active}>
+        <PageComponent
+          {...childProps}
+          pageMap={pageMap}
+          active={active}
+        />
+      </SinglePageAnimation>
+    );
+  });
 
   return (
     <>
