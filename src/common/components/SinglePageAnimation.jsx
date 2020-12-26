@@ -23,7 +23,7 @@ const SinglePageAnimation = (props) => {
   const animationClass = useMemo(() => (pageIn ? "animate__zoomIn" : "animate__zoomOut"), [pageIn]);
 
   return (
-    <div className={`animate__animated  h-100 w-100 ${animationClass}`}>
+    <div className={`animate__animated position-fixed overflow-hidden  h-100 w-100 ${animationClass}`}>
       {children}
     </div>
   );
