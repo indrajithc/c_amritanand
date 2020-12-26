@@ -39,10 +39,24 @@
     @extend .px-2;
     > h1 {
       @extend .fw-bolder;
-      @extend .m-0;
 
       color: $white;
       font-family: $title-font;
+    }
+
+    .subtitle {
+      @extend .pt-2;
+      > h4,
+      > p {
+        @extend .fw-bold;
+        @extend .h5;
+
+        color: $gray;
+        font-family: $title-font;
+      }
+      > p {
+        @extend .fst-italic;
+      }
     }
   }
 }

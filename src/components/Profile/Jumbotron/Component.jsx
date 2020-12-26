@@ -29,9 +29,19 @@ const JumbotronComponent = (props) => {
       </div>
 
       <div className="w-100 row justify-content-center">
-        <div className="col-12">
+        <div className="col-12 col-md-8 col-lg-6">
           <div className="main-name">
             <h1>Amritanand C</h1>
+            <div className="subtitle">
+              <h4>
+                Good, Better and Best.
+              </h4>
+              <p>
+                {
+                  `${"\"  Never let it rest, until ur good becomes better and better becomes best ! \""}`
+                }
+              </p>
+            </div>
           </div>
         </div>
       </div>
