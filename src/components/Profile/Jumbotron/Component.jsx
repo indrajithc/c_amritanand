@@ -12,6 +12,7 @@ import React from "react";
 /** ========= TAG COMPONENTS ========= */
 /** ========= SUB COMPONENT ========= */
 import SocialLinks from "../SocialLinks";
+import Copyright from "../Copyright";
 
 /** ========= MODULE STYLES ========= */
 /** ========= CUSTOM COMPONENTS ========= */
@@ -25,8 +26,8 @@ const JumbotronComponent = (props) => {
   return (
     <div className="jumbotron-profile">
       <div className="w-100 row justify-content-center">
-        <div className="col-12 col-md-6 col-lg-5">
-          <div className="main-image ">
+        <div className="col-10 col-md-5 col-lg-4">
+          <div className="main-image w-50 mx-auto">
             <img className="image-fluid mw-100" alt="" src="https://amritvin.github.io/c_amritanand/images/me12.jpeg" />
           </div>
         </div>
@@ -55,6 +56,7 @@ const JumbotronComponent = (props) => {
           <div className="social-link-home-wrapper">
             <SocialLinks />
             <div className="underline" />
+            <Copyright />
           </div>
         </div>
       </div>

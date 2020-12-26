@@ -75,6 +75,10 @@
       border-bottom: 3px solid $white;
       max-width: 100%;
     }
+
+    .copyright-wrapper {
+      @extend .mt-2;
+    }
   }
 }
 
@@ -91,6 +95,38 @@
   }
   i.bi {
     color: $white;
-    font-size: 2rem;
+    font-size: 1rem;
+  }
+  @include media-breakpoint-up(sm) {
+    i.bi {
+      font-size: 1.5rem;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    i.bi {
+      font-size: 1.75rem;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    i.bi {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* ===================== COPYRIGHT ===============  */
+
+.copyright-wrapper {
+  .content-text {
+    @extend .m-0;
+    @extend .small;
+
+    color: $gray;
+
+    span,
+    a {
+      padding: 0 5px;
+      color: $white;
+    }
   }
 }
