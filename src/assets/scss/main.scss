@@ -12,6 +12,10 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./custom/animate.css";
 
+/* =========== VARIABLES ============== */
+$white: #fff;
+$black: #000;
+
 /* ==== CUSTOM PAGE STYLES ===== */
 @import "./common.scss";
 @import "./home.scss";

@@ -22,13 +22,20 @@
 .jumbotron-profile {
   @extend .d-flex;
   @extend .w-100;
+  @extend .flex-column;
 
   .main-image {
     text-align: center;
     > img {
       border-radius: 50%;
-      border: 3px solid white;
+      border: 3px solid $white;
       padding: 2px;
     }
+  }
+
+  .main-name {
+    @extend .text-center;
+    @extend .p-2;
+    color: $white;
   }
 }
