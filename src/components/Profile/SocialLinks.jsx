@@ -22,7 +22,56 @@ const SocialLinks = (props) => {
 
   return (
     <div className="social-links-wrapper">
-      div
+      <div className="row justify-content-center">
+        <div className="col">
+          <div className="facebook icon-wrapper">
+            <a href="so">
+              <i className="bi bi-facebook" />
+            </a>
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="github icon-wrapper">
+            <a href="so">
+              <i className="bi bi-github" />
+            </a>
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="instagram icon-wrapper">
+            <a href="so">
+              <i className="bi bi-instagram" />
+            </a>
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="linkedin icon-wrapper">
+            <a href="so">
+              <i className="bi bi-linkedin" />
+            </a>
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="envelope icon-wrapper">
+            <a href="so">
+              <i className="bi bi-envelope" />
+            </a>
+          </div>
+        </div>
+
+        <div className="col">
+          <div className="twitter icon-wrapper">
+            <a href="so">
+              <i className="bi bi-twitter" />
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 };
