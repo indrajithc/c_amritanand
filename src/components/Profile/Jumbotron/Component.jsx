@@ -7,8 +7,12 @@
  *
  */
 
+import React from "react";
+
 /** ========= TAG COMPONENTS ========= */
 /** ========= SUB COMPONENT ========= */
+import SocialLinks from "../SocialLinks";
+
 /** ========= MODULE STYLES ========= */
 /** ========= CUSTOM COMPONENTS ========= */
 /** ========= API SERVICE FUNCTIONS ========= */
@@ -43,6 +47,12 @@ const JumbotronComponent = (props) => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="w-100 row justify-content-center">
+        <div className="col-12 text-center">
+          <SocialLinks />
         </div>
       </div>
 
