@@ -20,10 +20,10 @@ import PropTypes from "prop-types";
 const SinglePageAnimation = (props) => {
   const { children, pageIn } = props;
 
-  const animationClass = useMemo(() => (pageIn ? "animate__zoomIn" : "animate__zoomOut"), [pageIn]);
+  const animationClass = useMemo(() => (pageIn ? "animate__zoomIn z-active" : "animate__zoomOut"), [pageIn]);
 
   return (
-    <div className={`animate__animated position-fixed overflow-hidden  h-100 w-100 ${animationClass}`}>
+    <div className={`animate__animated position-fixed overflow-hidden z-index-activator h-100 w-100 ${animationClass}`}>
       {children}
     </div>
   );

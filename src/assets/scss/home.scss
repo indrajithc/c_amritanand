@@ -18,6 +18,13 @@
   z-index: 1;
 }
 
+.z-index-activator {
+  z-index: 1;
+  &.z-active {
+    z-index: 2;
+  }
+}
+
 /* ============= PROFILE - JUMBOTRON ============== */
 .jumbotron-profile {
   @extend .d-flex;
@@ -68,5 +75,22 @@
       border-bottom: 3px solid $white;
       max-width: 100%;
     }
+  }
+}
+
+/* ============= SOCIAL LINKS ============== */
+.social-links-wrapper {
+  .icon-wrapper {
+    @extend .d-flex;
+    @extend .p-1;
+
+    a {
+      @extend .d-flex;
+      cursor: pointer;
+    }
+  }
+  i.bi {
+    color: $white;
+    font-size: 2rem;
   }
 }
