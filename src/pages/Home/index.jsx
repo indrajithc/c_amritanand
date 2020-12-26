@@ -23,6 +23,7 @@ import AboutPage from "./About";
 /**  ========= CUSTOM COMPONENTS ========= */
 import SinglePageAnimation from "../../common/components/SinglePageAnimation";
 import Stars from "../../components/background/Stars";
+import Cloud from "../../components/background/Cloud";
 
 /**  ========= API SERVICE FUNCTIONS ========= */
 /**  ========= SVG IMAGE ICON ========= */
@@ -144,6 +145,7 @@ const HomeSinglePage = ({ match }) => {
   return (
     <>
       <Stars />
+      <Cloud />
       <ParallaxProvider>
         <Switch>
           <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
