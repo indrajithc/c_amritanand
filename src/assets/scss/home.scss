@@ -35,7 +35,14 @@
 
   .main-name {
     @extend .text-center;
-    @extend .p-2;
-    color: $white;
+    @extend .py-4;
+    @extend .px-2;
+    > h1 {
+      @extend .fw-bolder;
+      @extend .m-0;
+
+      color: $white;
+      font-family: $title-font;
+    }
   }
 }

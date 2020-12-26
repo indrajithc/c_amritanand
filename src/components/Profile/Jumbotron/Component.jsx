@@ -27,6 +27,15 @@ const JumbotronComponent = (props) => {
           </div>
         </div>
       </div>
+
+      <div className="w-100 row justify-content-center">
+        <div className="col-12">
+          <div className="main-name">
+            <h1>Amritanand C</h1>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

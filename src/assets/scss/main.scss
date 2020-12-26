@@ -13,8 +13,13 @@
 @import "./custom/animate.css";
 
 /* =========== VARIABLES ============== */
+
+/* Colors */
 $white: #fff;
 $black: #000;
+
+/* Fonts */
+$title-font: "Charmonman", cursive;
 
 /* ==== CUSTOM PAGE STYLES ===== */
 @import "./common.scss";
