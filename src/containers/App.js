@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import RouteView from "./RouteView";
 
-import "../assets/scss/style.scss";
+import "../assets/scss/main.scss";
 
 function App() {
   return (

@@ -1,0 +1,16 @@
+/*
+ * Copyright(c) 2020
+ * 
+ * All rights reserved.
+ * 
+ * @author Indrajith C
+ *
+ */
+
+/* ============= COMMON STYLES ============ */
+
+.horizontal-vertical-center {
+  @extend .d-flex;
+  @extend .align-items-center;
+  @extend .justify-content-center;
+}
