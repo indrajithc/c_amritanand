@@ -22,8 +22,8 @@ import AboutPage from "./About";
 /**  ========= MODULE STYLES ========= */
 /**  ========= CUSTOM COMPONENTS ========= */
 import SinglePageAnimation from "../../common/components/SinglePageAnimation";
-import Stars from "../../components/background/Stars";
-import Cloud from "../../components/background/Cloud";
+import Stars from "../../components/Background/Stars";
+import Cloud from "../../components/Background/Cloud";
 
 /**  ========= API SERVICE FUNCTIONS ========= */
 /**  ========= SVG IMAGE ICON ========= */
