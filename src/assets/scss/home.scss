@@ -59,4 +59,14 @@
       }
     }
   }
+
+  .social-link-home-wrapper {
+    @extend .m-auto;
+
+    .underline {
+      @extend .mt-2;
+      border-bottom: 3px solid $white;
+      max-width: 100%;
+    }
+  }
 }

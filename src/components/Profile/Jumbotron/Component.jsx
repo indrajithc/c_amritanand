@@ -51,8 +51,11 @@ const JumbotronComponent = (props) => {
       </div>
 
       <div className="w-100 row justify-content-center">
-        <div className="col-12 text-center">
-          <SocialLinks />
+        <div className="col-12 text-center d-flex ">
+          <div className="social-link-home-wrapper">
+            <SocialLinks />
+            <div className="underline" />
+          </div>
         </div>
       </div>
 
