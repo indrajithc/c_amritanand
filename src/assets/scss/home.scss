@@ -87,6 +87,7 @@
   .icon-wrapper {
     @extend .d-flex;
     @extend .p-1;
+    @extend .justify-content-center;
 
     a {
       @extend .d-flex;
