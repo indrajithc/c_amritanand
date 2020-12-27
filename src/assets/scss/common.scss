@@ -20,3 +20,11 @@ a {
   @extend .h-100;
   @extend .w-100;
 }
+
+.transition-linear-05s {
+  transition: all 0.5s linear;
+}
+
+.transition-linear-01s {
+  transition: all 0.1s linear;
+}
