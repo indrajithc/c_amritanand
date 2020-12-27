@@ -78,6 +78,16 @@ const PageMaker = (props) => {
   }, [page, pageMap, history]);
 
   useEffect(() => {
+    if (pageMap) {
+      const noOfPage = pageMap.length || 1;
+      updateSettings((settingsActions) => ({
+        type: settingsActions.UPDATE_HOME_PAGE_COUNT,
+        value: noOfPage,
+      }));
+    }
+  }, [pageMap, updateSettings]);
+
+  useEffect(() => {
     if (page) {
       const currentPageIndex = pageMap.findIndex((eachPage) => eachPage.id === page);
       if (currentPageIndex >= 0) {
