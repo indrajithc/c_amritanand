@@ -69,7 +69,11 @@
 
   .social-link-home-wrapper {
     @extend .m-auto;
+    @extend .pt-3;
 
+    .social-links-wrapper {
+      @extend .px-2;
+    }
     .underline {
       @extend .mt-2;
       border-bottom: 3px solid $white;
@@ -121,6 +125,7 @@
   .content-text {
     @extend .m-0;
     @extend .small;
+    @extend .px-1;
 
     color: $gray;
 
