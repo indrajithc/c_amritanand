@@ -12,7 +12,6 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import { Switch, Route } from "react-router-dom";
-import { ParallaxProvider } from "react-scroll-parallax";
 
 /**  ========= TAG COMPONENTS ========= */
 /**  ========= SUB COMPONENT ========= */
@@ -29,6 +28,9 @@ import Cloud from "../../components/Background/Cloud";
 /**  ========= SVG IMAGE ICON ========= */
 /**  ========= UTILS ========= */
 import { pageConstants } from "../../common/utils/constants";
+
+/**  ========= CONTEXT ========= */
+import { useSettings } from "../../common/context/siteSettings";
 
 const getPageMapper = () => {
   const pageMap = [
@@ -50,11 +52,21 @@ const getPageMapper = () => {
 const PageMaker = (props) => {
   const { page, history } = props;
 
+  const settingsContext = useSettings();
+  const updateSettings = settingsContext && settingsContext[1];
+
   // local states
   const scrollToRef = useRef(0);
 
   const pageMap = useMemo(getPageMapper, []);
   const scrollHelperStyle = useMemo(() => ({ minHeight: `${pageMap.length * 100}vh` }), [pageMap]);
+
+  const updateScroll = useCallback((scrollValue) => {
+    updateSettings((settingsActions) => ({
+      type: settingsActions.UPDATE_SCROLL,
+      value: scrollValue,
+    }));
+  }, [updateSettings]);
 
   const pageSwitcher = useCallback((pageIndex) => {
     const currentPage = pageMap[pageIndex];
@@ -94,6 +106,7 @@ const PageMaker = (props) => {
         scrollToRef.current = 0;
         pageSwitcher(currentPageId);
       }
+      updateScroll((winScroll / height) * 100);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -101,7 +114,7 @@ const PageMaker = (props) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [pageMap, pageSwitcher]);
+  }, [pageMap, pageSwitcher, updateScroll]);
 
   /**
    * This function is used to map page
@@ -146,12 +159,10 @@ const HomeSinglePage = ({ match }) => {
     <>
       <Stars />
       <Cloud />
-      <ParallaxProvider>
-        <Switch>
-          <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
-          <Route exact path={`${path}${pageConstants.ABOUT}`} component={(props) => <PageMaker {...props} page={pageConstants.ABOUT} />} />
-        </Switch>
-      </ParallaxProvider>
+      <Switch>
+        <Route exact path={path} component={(props) => <PageMaker {...props} page={pageConstants.HOME} />} />
+        <Route exact path={`${path}${pageConstants.ABOUT}`} component={(props) => <PageMaker {...props} page={pageConstants.ABOUT} />} />
+      </Switch>
     </>
   );
 };
