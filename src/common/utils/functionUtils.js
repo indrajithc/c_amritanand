@@ -15,12 +15,14 @@
 /** ========= SVG IMAGE ICON ========= */
 /** ========= UTILS ========= */
 
-const minMaxNumber = (value, min, max) => (Math.min(max, Math.max(min, value)));
+const toFiled = (value, fixedTo = 2) => (value ? Math.floor(value * (10 ** fixedTo)) / (10 ** fixedTo) : 0);
+
+const minMaxNumber = (value, min, max) => toFiled(Math.min(max, Math.max(min, value)));
 
 const minMaxReducer = (value, min, max, ratio = 1) => {
   const range = max - min;
   const rangeValue = min + (range * (value / ratio));
-  return minMaxNumber(rangeValue, min, max);
+  return minMaxNumber((rangeValue), min, max);
 };
 
 export {
