@@ -23,10 +23,12 @@ const SettingsContext = createContext();
 
 const initialState = {
   scroll: 0,
+  homePageCount: 1,
 };
 
 const actions = {
   UPDATE_SCROLL: "UPDATE_SCROLL",
+  UPDATE_HOME_PAGE_COUNT: "UPDATE_HOME_PAGE_COUNT",
 };
 
 const settingsReducer = (state, action) => {
@@ -36,6 +38,9 @@ const settingsReducer = (state, action) => {
     case actions.UPDATE_SCROLL: {
       return { ...state, scroll: value };
     }
+    case actions.UPDATE_HOME_PAGE_COUNT: {
+      return { ...state, homePageCount: value };
+    }
     default: {
       throw new Error(`Error code X0000 : Unhandled action type: ${type}`);
     }
@@ -44,10 +49,6 @@ const settingsReducer = (state, action) => {
 
 const SettingsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(settingsReducer, initialState);
-
-  console.log({
-    state,
-  });
 
   return (
     <SettingsContext.Provider value={[state, dispatch]}>
