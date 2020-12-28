@@ -8,6 +8,8 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
+
 // import { Link } from "react-router-dom";
 // import { Parallax } from "react-scroll-parallax";
 
@@ -23,11 +25,24 @@ import MouseLink from "../../common/components/MouseLink";
 /** ========= SVG IMAGE ICON ========= */
 /** ========= UTILS ========= */
 
-const Home = () => (
-  <div className="horizontal-vertical-center">
-    <JumbotronProfile />
-    <MouseLink to="/about" />
-  </div>
-);
+const Home = (props) => {
+  const { active } = props;
+
+  return (
+    <div className="horizontal-vertical-center">
+      <JumbotronProfile />
+      { active ? (<MouseLink to="/about" />) : ""}
+
+    </div>
+  );
+};
+
+Home.propTypes = {
+  active: PropTypes.bool,
+};
+
+Home.defaultProps = {
+  active: false,
+};
 
 export default Home;
