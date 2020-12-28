@@ -35,7 +35,7 @@ const JumbotronContainer = () => {
     <Component
       name={`${userData.firstName || ""} ${userData.lastName || ""}`}
       image={userData.image}
-      title={useState.title}
+      title={userData.title}
       subtitle={userData.subtitle}
     />
   );
