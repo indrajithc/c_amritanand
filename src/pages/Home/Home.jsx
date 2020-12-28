@@ -10,21 +10,23 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 // import { Parallax } from "react-scroll-parallax";
-import { Jumbotron as JumbotronProfile } from "../../components/Profile";
 
 /** ========= TAG COMPONENTS ========= */
 /** ========= SUB COMPONENT ========= */
+import { Jumbotron as JumbotronProfile } from "../../components/Profile";
+
 /** ========= MODULE STYLES ========= */
 /** ========= CUSTOM COMPONENTS ========= */
+import MouseLink from "../../common/components/MouseLink";
+
 /** ========= API SERVICE FUNCTIONS ========= */
 /** ========= SVG IMAGE ICON ========= */
 /** ========= UTILS ========= */
 
 const Home = () => (
   <div className="horizontal-vertical-center">
-
     <JumbotronProfile />
-
+    <MouseLink to="/about" />
   </div>
 );
 
