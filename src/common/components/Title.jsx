@@ -73,8 +73,6 @@ SectionTitle.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const dummy = null;
-
 export {
   PageTitle,
   SectionTitle,
