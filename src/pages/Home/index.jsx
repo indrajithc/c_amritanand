@@ -96,7 +96,8 @@ const PageMaker = (props) => {
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const eachPageHeight = height / totalPages;
         const currentPageScrollPosition = currentPageIndex * eachPageHeight;
-        if (winScroll < currentPageScrollPosition) {
+
+        if (winScroll < currentPageScrollPosition || currentPageScrollPosition === 0) {
           scrollToRef.current = currentPageScrollPosition;
           window.scrollTo(0, currentPageScrollPosition);
         }
