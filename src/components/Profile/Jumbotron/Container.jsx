@@ -7,6 +7,8 @@
  *
  */
 
+import { useEffect, useState } from "react";
+
 /** ========= TAG COMPONENTS ========= */
 /** ========= SUB COMPONENT ========= */
 import Component from "./Component";
@@ -15,12 +17,28 @@ import Component from "./Component";
 /** ========= CUSTOM COMPONENTS ========= */
 /** ========= API SERVICE FUNCTIONS ========= */
 /** ========= SVG IMAGE ICON ========= */
-/** ========= UTILS ========= */
+/** ========= API SERVICE ========= */
+import { getUserData } from "./service";
 
-const JumbotronContainer = (props) => {
-  console.log("test", props);
+const JumbotronContainer = () => {
+  const [userData, setUserData] = useState({});
 
-  return (<Component />);
+  useEffect(() => {
+    getUserData().then((data) => {
+      if (data) {
+        setUserData(data);
+      }
+    });
+  }, []);
+
+  return (
+    <Component
+      name={`${userData.firstName || ""} ${userData.lastName || ""}`}
+      image={userData.image}
+      title={useState.title}
+      subtitle={userData.subtitle}
+    />
+  );
 };
 
 export default JumbotronContainer;
