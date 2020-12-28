@@ -183,3 +183,19 @@ $animDuration: 5s;
     transform: translateY(0);
   }
 }
+
+.page-title {
+  @extend .fw-bolder;
+  @extend .h1;
+
+  .content {
+    @extend .px-2;
+
+    color: $white;
+    font-family: $title-font;
+  }
+
+  .title-underline {
+    border: 2px solid $white;
+  }
+}
