@@ -45,9 +45,37 @@ PageTitle.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+const SectionTitle = (props) => {
+  const {
+    children, className, underline, ...rest
+  } = props;
+
+  return (
+    <div className={` section-title  ${className}`} {...rest}>
+      <div className="content">
+        {children}
+      </div>
+      {
+        underline ? (<div className="title-underline" />) : ""
+      }
+    </div>
+  );
+};
+
+SectionTitle.defaultProps = {
+  className: "",
+  underline: false,
+};
+
+SectionTitle.propTypes = {
+  underline: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
 const dummy = null;
 
 export {
   PageTitle,
-  dummy,
+  SectionTitle,
 };

@@ -199,3 +199,19 @@ $animDuration: 5s;
     border: 2px solid $white;
   }
 }
+
+.section-title {
+  @extend .fw-bold;
+  @extend .h3;
+
+  .content {
+    @extend .px-1;
+
+    color: $white;
+    font-family: $title-font;
+  }
+
+  .title-underline {
+    border: 1px solid $white;
+  }
+}
