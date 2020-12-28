@@ -30,6 +30,20 @@ const user = {
     linkedin: "https://www.linkedin.com/in/amritanand-c-19a94823/",
     twitter: "https://twitter.com/amritvin",
   },
+  education: [
+    {
+      title: "M.Tech, Cyber Security Systems and Networking, Amrita School of Engineering",
+    },
+    {
+      title: "B.Tech, Computer Science and Engineering, MEA Engineering College, Perinthalmanna",
+    },
+    {
+      title: "Higher Secondary, Nazareth Senior Secondary School, Manjeri, Malappuram, Kerala",
+    },
+    {
+      title: "10th, Amrita Vidyalayam , Manjeri,Malappuram,Kerala",
+    },
+  ],
 };
 
 /** This function used to return user static data */
@@ -44,7 +58,14 @@ const getUserSocialLinks = async () => ({
   data: user.socialLinks,
 });
 
+/** This function is used to return user education details */
+const getUserEducation = async () => ({
+  success: true,
+  data: user.education,
+});
+
 export default {
   getUserDetails,
   getUserSocialLinks,
+  getUserEducation,
 };
