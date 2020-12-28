@@ -19,6 +19,7 @@ const user = {
   id: "amritvin",
   firstName: "Amritanand",
   lastName: "C",
+  image: "https://amritvin.github.io/c_amritanand/images/me12.jpeg",
   email: "c.amritanand@gmail.com",
   title: "Good, Better and Best.",
   subtitle: "\" Never let it rest, until ur good becomes better and better becomes best ! \"",
