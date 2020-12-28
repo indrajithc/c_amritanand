@@ -86,6 +86,9 @@ $animDuration: 5s;
       animation: trackBallSlide $animDuration linear infinite;
     }
   }
+  @include media-breakpoint-down(sm) {
+    display: none !important;
+  }
 }
 
 @keyframes trackBallSlide {
