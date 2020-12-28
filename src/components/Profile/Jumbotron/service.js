@@ -18,7 +18,7 @@ import dummyData from "../../../api/dummy-data/user";
 /** ========= UTILS ========= */
 
 const getUserData = async () => {
-  const response = await dummyData.getUserData();
+  const response = await dummyData.getUserDetails();
 
   if (response && response.success && response.data) {
     return response.data;
