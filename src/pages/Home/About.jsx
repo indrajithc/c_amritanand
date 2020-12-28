@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
 /** ========= TAG COMPONENTS ========= */
 /** ========= SUB COMPONENT ========= */
 import Education from "../../components/Profile/Education";
+import Interests from "../../components/Profile/Interests";
 
 /** ========= MODULE STYLES ========= */
 /** ========= CUSTOM COMPONENTS ========= */
@@ -36,12 +37,12 @@ const About = (props) => {
           <PageTitle>About me</PageTitle>
         </div>
         <div className="container">
-          <div className="row pt-4">
+          <div className="row pt-5">
             <div className="col-12 col-md-6">
               <Education />
             </div>
             <div className="col-12 col-md-6">
-              test
+              <Interests />
             </div>
           </div>
         </div>
