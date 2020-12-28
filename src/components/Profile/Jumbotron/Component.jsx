@@ -8,10 +8,11 @@
  */
 
 import React, { useMemo } from "react";
+import PropTypes from "prop-types";
 
 /** ========= TAG COMPONENTS ========= */
 /** ========= SUB COMPONENT ========= */
-import SocialLinks from "../SocialLinks";
+import SocialLinks from "../SocialLinks/index";
 import Copyright from "../Copyright";
 
 /** ========= MODULE STYLES ========= */
@@ -25,7 +26,9 @@ import { useSettings } from "../../../common/context/siteSettings";
 import { minMaxNumber, minMaxReducer } from "../../../common/utils/functionUtils";
 
 const JumbotronComponent = (props) => {
-  console.log("test", props);
+  const {
+    name, image, title, subtitle,
+  } = props;
 
   const [settings] = useSettings();
 
@@ -43,32 +46,38 @@ const JumbotronComponent = (props) => {
 
   return (
     <div className="jumbotron-profile">
-      <div className="w-100 row justify-content-center">
-        <div className="col-10 col-md-5 col-lg-4">
-          <div
-            className="main-image mx-auto transition-linear-01s"
-            style={{
-              width: `${50 + scrollValues.imageWith}%`,
-            }}
-          >
-            <img className="image-fluid w-100 mw-100" alt="" src="https://amritvin.github.io/c_amritanand/images/me12.jpeg" />
+      {
+        image ? (
+          <div className="w-100 row justify-content-center">
+            <div className="col-10 col-md-5 col-lg-4">
+              <div
+                className="main-image mx-auto transition-linear-01s"
+                style={{
+                  width: `${50 + scrollValues.imageWith}%`,
+                }}
+              >
+                <img className="image-fluid w-100 mw-100" alt="" src={image} />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        ) : ""
+      }
 
       <div className="w-100 row justify-content-center">
         <div className="col-12 col-md-8 col-lg-6">
           <div className="main-name">
-            <h1>Amritanand C</h1>
+            <h1>{name}</h1>
             <div className="subtitle  transition-linear-01s" style={{ zoom: minMaxNumber((1.5 - scrollValues.ratio), 0.25, 1) }}>
-              <h4>
-                Good, Better and Best.
-              </h4>
-              <p>
-                {
-                  `${"\"  Never let it rest, until ur good becomes better and better becomes best ! \""}`
-                }
-              </p>
+              {
+                title ? (
+                  <h4>{title}</h4>
+                ) : ""
+              }
+              {
+                subtitle ? (
+                  <p>{subtitle}</p>
+                ) : ""
+              }
             </div>
           </div>
         </div>
@@ -86,6 +95,19 @@ const JumbotronComponent = (props) => {
 
     </div>
   );
+};
+
+JumbotronComponent.defaultProps = {
+  image: null,
+  title: null,
+  subtitle: null,
+};
+
+JumbotronComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
 };
 
 export default JumbotronComponent;
