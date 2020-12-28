@@ -22,7 +22,7 @@ const MouseLink = (props) => {
   const { to } = props;
 
   return (
-    <Link to={to} className="link-mouse-wrapper">
+    <Link to={to} className="link-mouse-wrapper animate__animated animate__fadeInUp animate__delay-1s">
       <span className="link-mouse" />
     </Link>
   );
