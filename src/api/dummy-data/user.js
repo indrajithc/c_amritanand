@@ -44,6 +44,20 @@ const user = {
       title: "10th, Amrita Vidyalayam , Manjeri,Malappuram,Kerala",
     },
   ],
+  interests: [
+    {
+      title: "Programming",
+    },
+    {
+      title: "Machine Learning and Automation     ",
+    },
+    {
+      title: " Database Security      ",
+    },
+    {
+      title: "Debugging Programs",
+    },
+  ],
 };
 
 /** This function used to return user static data */
@@ -64,8 +78,15 @@ const getUserEducation = async () => ({
   data: user.education,
 });
 
+/** This function is used to return user interests details */
+const getUserInterests = async () => ({
+  success: true,
+  data: user.education,
+});
+
 export default {
   getUserDetails,
   getUserSocialLinks,
   getUserEducation,
+  getUserInterests,
 };
