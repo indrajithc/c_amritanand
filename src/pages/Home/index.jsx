@@ -112,7 +112,8 @@ const PageMaker = (props) => {
       const eachPageHeight = height / totalPages;
       const scrolled = winScroll / eachPageHeight;
       const currentPageId = Math.max(0, Math.min(Math.floor(scrolled), (totalPages - 1)));
-      if (scrollToRef.current < winScroll) {
+
+      if (scrollToRef.current <= winScroll) {
         scrollToRef.current = 0;
         pageSwitcher(currentPageId);
       }
